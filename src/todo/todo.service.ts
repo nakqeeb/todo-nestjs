@@ -1,4 +1,4 @@
-import { UpdateStatusDto } from './dto/updateStatus.dto';
+import { UpdateStatusDto } from './dto/update-status.dto';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import {
   Injectable,
