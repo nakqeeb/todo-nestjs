@@ -4,7 +4,4 @@ export class CreateTodoDto {
   @IsString()
   @IsNotEmpty()
   todoItem: string;
-
-  /* @IsNotEmpty()
-  userId: Types.ObjectId; */
 }
