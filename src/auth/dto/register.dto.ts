@@ -1,5 +1,5 @@
 import { AgeEnum } from './../../types/age.enum';
-import { IsEnum, IsNotEmpty } from 'class-validator';
+import { IsDateString, IsEnum, IsNotEmpty } from 'class-validator';
 
 export class RegisterDTO {
   @IsNotEmpty()
@@ -16,8 +16,11 @@ export class RegisterDTO {
 
   address: string;
 
+  @IsDateString()
   dateOfBirth: Date;
 
-  @IsEnum(AgeEnum)
+  @IsEnum(AgeEnum, {
+    message: 'age must be either Male or Female',
+  })
   age: AgeEnum;
 }

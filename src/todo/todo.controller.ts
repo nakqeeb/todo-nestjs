@@ -14,7 +14,10 @@ import {
 } from '@nestjs/common';
 import { TodoService } from './todo.service';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
+@ApiBearerAuth('JWT-auth') // This is the one that needs to match the name in main.ts
+@ApiTags('ToDo')
 @Controller('todo')
 export class TodoController {
   constructor(private todoService: TodoService) {}
